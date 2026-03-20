@@ -4453,7 +4453,7 @@ function Fatality.new(Window: Window)
 	HeaderText.Text = Window.Name
 	HeaderText.TextColor3 = Color3.fromRGB(229, 229, 229)
 	HeaderText.TextSize = 21.000
-	HeaderText.TextStrokeColor3 = Color3.fromRGB(205, 67, 218)
+	HeaderText.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
 	HeaderText.TextStrokeTransparency = 0.640
 
 	MenuButtonCont.Name = Fatality:RandomString()
@@ -6351,6 +6351,7 @@ function Fatality:Loader(Config: Loader)
 	Config.Scale = Config.Scale or 3;
 
 	local Blur = Instance.new('BlurEffect');
+	local ColorCorrection = Instance.new('ColorCorrectionEffect');
 	local Loader = Instance.new("ScreenGui")
 	local center = Instance.new("Frame")
 	local texts = Instance.new("Frame")
@@ -6398,6 +6399,9 @@ function Fatality:Loader(Config: Loader)
 
 	Blur.Size = 0;
 	Blur.Parent = game:GetService('Lighting');
+
+	ColorCorrection.TintColor = Color3.fromRGB(255, 180, 180);
+	ColorCorrection.Parent = game:GetService('Lighting');
 
 	Fatality:CreateAnimation(Blur,1,{
 		Size = 60
