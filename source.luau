@@ -4612,8 +4612,8 @@ function NeverLose:CreateWindow(Config)
 	RightMenuFrame.Size = UDim2.new(1, -176, 1, 0)
 	RightMenuFrame.ZIndex = 8
 
-	UIStroke.Transparency = 0.650
-	UIStroke.Color = Color3.fromRGB(45, 48, 58)
+	UIStroke.Transparency = 0.550
+	UIStroke.Color = Color3.fromRGB(118, 185, 0)
 	UIStroke.Parent = RightMenuFrame
 
 	UICorner_4.CornerRadius = UDim.new(0, 13)
