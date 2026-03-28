@@ -4197,30 +4197,8 @@ function NeverLose:CreateWindow(Config)
 
 	NeverLose:AddSignal(WindowFrame:GetPropertyChangedSignal('BackgroundTransparency'):Connect(renderParentWindow))
 
-	-- ===== GREEN OVERLAY =====
-	local GreenOverlay = Instance.new("Frame")
-	GreenOverlay.Name = NeverLose.RandomString()
-	GreenOverlay.Parent = NeverLose.ScreenGui
-	GreenOverlay.BackgroundColor3 = Color3.fromRGB(20, 60, 0)
-	GreenOverlay.BackgroundTransparency = 1
-	GreenOverlay.BorderSizePixel = 0
-	GreenOverlay.Size = UDim2.fromScale(1, 1)
-	GreenOverlay.ZIndex = 0
-
-	-- Blur suave via DepthOfField (solo visual, sin lag)
-	local DOF = Instance.new("DepthOfFieldEffect")
-	DOF.FarIntensity = 0
-	DOF.FocusDistance = 0
-	DOF.InFocusRadius = 0
-	DOF.NearIntensity = 0
-	DOF.Enabled = false
-	DOF.Parent = game:GetService("Lighting")
-
 	Window.SetRender = LPH_NO_VIRTUALIZE(function(self , value)
 		if value then
-			NeverLose.PlayAnimate(GreenOverlay, SlowyTween, { BackgroundTransparency = 0.75 })
-			DOF.Enabled = true
-			NeverLose.PlayAnimate(DOF, SlowyTween, { NearIntensity = 0.6 })
 			NeverLose.PlayAnimate(WindowFrame , SlowyTween , {
 				BackgroundTransparency = (NeverLose.EnabledBlur and 0.055) or 0.0255,
 				Size = Window.Size
@@ -4395,9 +4373,6 @@ function NeverLose:CreateWindow(Config)
 			})
 
 			Window.Shadow:Render(false);
-			NeverLose.PlayAnimate(GreenOverlay, SlowyTween, { BackgroundTransparency = 1 })
-			NeverLose.PlayAnimate(DOF, SlowyTween, { NearIntensity = 0 })
-			task.delay(0.2, function() DOF.Enabled = false end)
 		end;
 	end);
 
@@ -5311,7 +5286,7 @@ function NeverLose:CreateWindow(Config)
 			SectionHandler.ZIndex = 9
 
 			UIStroke.Transparency = 0.650
-			UIStroke.Color = Color3.fromRGB(45, 48, 58)
+			UIStroke.Color = Color3.fromRGB(118, 185, 0)
 			UIStroke.Parent = SectionHandler
 
 			UICorner.CornerRadius = UDim.new(0, 10)
