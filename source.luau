@@ -3685,7 +3685,7 @@ function NeverLose:RegisiterItem(Frame: Frame , Signel)
 		LineFrame.Name = NeverLose.RandomString();
 		LineFrame.Parent = BasedFrame
 		LineFrame.AnchorPoint = Vector2.new(0.5, 1)
-		LineFrame.BackgroundColor3 = Color3.fromRGB(45, 48, 58)
+		LineFrame.BackgroundColor3 = Color3.fromRGB(118, 185, 0)
 		LineFrame.BackgroundTransparency = 0.650
 		LineFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		LineFrame.BorderSizePixel = 0
@@ -5286,7 +5286,7 @@ function NeverLose:CreateWindow(Config)
 			SectionHandler.ZIndex = 9
 
 			UIStroke.Transparency = 0.650
-			UIStroke.Color = Color3.fromRGB(118, 185, 0)
+			UIStroke.Color = Color3.fromRGB(45, 48, 58)
 			UIStroke.Parent = SectionHandler
 
 			UICorner.CornerRadius = UDim.new(0, 10)
