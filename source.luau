@@ -4474,7 +4474,7 @@ function NeverLose:CreateWindow(Config)
 	LineFrame.Name = NeverLose.RandomString();
 	LineFrame.Parent = HeadFrame
 	LineFrame.AnchorPoint = Vector2.new(0.5, 1)
-	LineFrame.BackgroundColor3 = Color3.fromRGB(45, 48, 58)
+	LineFrame.BackgroundColor3 = Color3.fromRGB(118, 185, 0)
 	LineFrame.BackgroundTransparency = 0.650
 	LineFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	LineFrame.BorderSizePixel = 0
@@ -4482,7 +4482,6 @@ function NeverLose:CreateWindow(Config)
 	LineFrame.Size = UDim2.new(1, -10, 0, 1)
 	LineFrame.ZIndex = 5
 
-	LeftScrollingFrame.Name = NeverLose.RandomString();
 	LeftScrollingFrame.Parent = LeftMenuFrame
 	LeftScrollingFrame.Active = true
 	LeftScrollingFrame.AnchorPoint = Vector2.new(0.5, 0)
@@ -4565,7 +4564,7 @@ function NeverLose:CreateWindow(Config)
 	LineFrame_2.Name = NeverLose.RandomString();
 	LineFrame_2.Parent = BottomFrame
 	LineFrame_2.AnchorPoint = Vector2.new(0.5, 0)
-	LineFrame_2.BackgroundColor3 = Color3.fromRGB(45, 48, 58)
+	LineFrame_2.BackgroundColor3 = Color3.fromRGB(118, 185, 0)
 	LineFrame_2.BackgroundTransparency = 0.650
 	LineFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	LineFrame_2.BorderSizePixel = 0
@@ -4612,8 +4611,8 @@ function NeverLose:CreateWindow(Config)
 	RightMenuFrame.Size = UDim2.new(1, -176, 1, 0)
 	RightMenuFrame.ZIndex = 8
 
-	UIStroke.Transparency = 0.550
-	UIStroke.Color = Color3.fromRGB(118, 185, 0)
+	UIStroke.Transparency = 0.650
+	UIStroke.Color = Color3.fromRGB(45, 48, 58)
 	UIStroke.Parent = RightMenuFrame
 
 	UICorner_4.CornerRadius = UDim.new(0, 13)
@@ -4631,7 +4630,7 @@ function NeverLose:CreateWindow(Config)
 	LineFrame_3.Name = NeverLose.RandomString();
 	LineFrame_3.Parent = RightHeader
 	LineFrame_3.AnchorPoint = Vector2.new(0.5, 1)
-	LineFrame_3.BackgroundColor3 = Color3.fromRGB(45, 48, 58)
+	LineFrame_3.BackgroundColor3 = Color3.fromRGB(118, 185, 0)
 	LineFrame_3.BackgroundTransparency = 0.650
 	LineFrame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	LineFrame_3.BorderSizePixel = 0
@@ -4651,7 +4650,7 @@ function NeverLose:CreateWindow(Config)
 	ConfigFrame.ZIndex = 9
 
 	UIStroke_2.Transparency = 0.650
-	UIStroke_2.Color = Color3.fromRGB(45, 48, 58)
+	UIStroke_2.Color = Color3.fromRGB(118, 185, 0)
 	UIStroke_2.Parent = ConfigFrame
 
 	UICorner_5.CornerRadius = UDim.new(0, 4)
@@ -4669,14 +4668,14 @@ function NeverLose:CreateWindow(Config)
 	ConfigIcon.ZIndex = 9
 	ConfigIcon.FontFace = NeverLose.BuiltInBold
 	ConfigIcon.Text = "pencil-square"
-	ConfigIcon.TextColor3 = Color3.fromRGB(223, 223, 223)
+	ConfigIcon.TextColor3 = Color3.fromRGB(118, 185, 0)
 	ConfigIcon.TextSize = 16.000
 	ConfigIcon.TextTransparency = 0.250
 	ConfigIcon.TextWrapped = true
 
 	LineFrame_4.Name = NeverLose.RandomString();
 	LineFrame_4.Parent = ConfigFrame
-	LineFrame_4.BackgroundColor3 = Color3.fromRGB(45, 48, 58)
+	LineFrame_4.BackgroundColor3 = Color3.fromRGB(118, 185, 0)
 	LineFrame_4.BackgroundTransparency = 0.650
 	LineFrame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	LineFrame_4.BorderSizePixel = 0
