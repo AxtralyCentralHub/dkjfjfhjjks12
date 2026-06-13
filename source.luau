@@ -7017,8 +7017,42 @@ function NeverLose:CreateWindow(Config)
 		local screenSize = CurrentCamera.ViewportSize
 		activeLinesCount = 0
 		
+		local menuMinX, menuMinY, menuMaxX, menuMaxY
+		local hasMenu = WindowFrame and WindowFrame.Parent and WindowFrame.Visible
+		if hasMenu then
+			local absPos = WindowFrame.AbsolutePosition
+			local absSize = WindowFrame.AbsoluteSize
+			menuMinX = absPos.X - 10
+			menuMinY = absPos.Y - 10
+			menuMaxX = absPos.X + absSize.X + 10
+			menuMaxY = absPos.Y + absSize.Y + 10
+		end
+		
 		for _, p in ipairs(points) do
 			p.pos = p.pos + (p.vel * dt)
+			
+			if hasMenu and p.pos.X >= menuMinX and p.pos.X <= menuMaxX and p.pos.Y >= menuMinY and p.pos.Y <= menuMaxY then
+				local leftDist  = p.pos.X - menuMinX
+				local rightDist = menuMaxX - p.pos.X
+				local topDist   = p.pos.Y - menuMinY
+				local bottomDist = menuMaxY - p.pos.Y
+				
+				local minDist = math.min(leftDist, rightDist, topDist, bottomDist)
+				
+				if minDist == leftDist then
+					p.vel = Vector2.new(-math.abs(p.vel.X), p.vel.Y)
+					p.pos = Vector2.new(menuMinX - 2, p.pos.Y)
+				elseif minDist == rightDist then
+					p.vel = Vector2.new(math.abs(p.vel.X), p.vel.Y)
+					p.pos = Vector2.new(menuMaxX + 2, p.pos.Y)
+				elseif minDist == topDist then
+					p.vel = Vector2.new(p.vel.X, -math.abs(p.vel.Y))
+					p.pos = Vector2.new(p.pos.X, menuMinY - 2)
+				else
+					p.vel = Vector2.new(p.vel.X, math.abs(p.vel.Y))
+					p.pos = Vector2.new(p.pos.X, menuMaxY + 2)
+				end
+			end
 			
 			if p.pos.X <= 0 or p.pos.X >= screenSize.X then p.vel = Vector2.new(-p.vel.X, p.vel.Y) end
 			if p.pos.Y <= 0 or p.pos.Y >= screenSize.Y then p.vel = Vector2.new(p.vel.X, -p.vel.Y) end
